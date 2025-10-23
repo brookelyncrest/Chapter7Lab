@@ -1,0 +1,171 @@
+/* Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  background-color: #0a0e27;
+  color: #e0e6f0;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  background-color: #1a1f3a;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
+}
+
+header h1 {
+  color: #4facfe;
+  margin: 0;
+}
+
+/* Navigation */
+nav {
+  grid-area: nav;
+  background-color: #141829;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+nav a {
+  color: #4facfe;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+/* Main */
+main {
+  grid-area: main;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+/* Content containers */
+article, section, aside, figure {
+  background-color: #1a1f3a;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+article h2, aside h2, section h2 {
+  color: #4facfe;
+  margin-top: 0;
+}
+
+/* Link style */
+a {
+  color: #4facfe;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00f2fe;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #9db4ff;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #1a1f3a;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #8a94ab;
+}
+
+footer a {
+  color: #4facfe;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+  text-decoration: none;
+}
+
+/* Responsive Design for Tablet */
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  header, footer {
+    padding: 1.5rem;
+  }
+}
+
+/* Print viewport */
+@media print {
+  nav, footer {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    display: block;
+  }
+  
+  article, section, aside, figure {
+    background-color: white;
+    color: black;
+    border: 1px solid #000;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  
+  header {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+    border-bottom: 2px solid #000;
+  }
+  
+  header h1 {
+    color: black;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}
